@@ -17,10 +17,13 @@ export default function Navbar() {
     email: email || 'user is not found',
   };
 
-  const handleLogout = () => {
-    signOut(auth)
+    const handleLogout = () => {
+    if(email){signOut(auth)
     navigate('/login')
-    toast.success('Loged Out')
+    toast.success('Loged Out')}
+    else{
+      navigate('/login')
+    }
 
   };
 
@@ -79,4 +82,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
 
