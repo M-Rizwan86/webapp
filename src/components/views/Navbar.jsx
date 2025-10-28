@@ -29,7 +29,7 @@ export default function Navbar() {
       <h1 className="text-xl font-bold">ReactApp</h1>
 
       <div className="space-x-4 flex items-center">
-        <NavLink to="/dashboard" className="hover:underline">
+        <NavLink to="/" className="hover:underline">
           Dashboard
         </NavLink>
 
@@ -79,3 +79,4 @@ export default function Navbar() {
     </nav>
   );
 }
+
