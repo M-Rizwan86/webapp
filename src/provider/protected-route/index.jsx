@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { AuthContext } from '../../context'
-import { Navigate } from 'react-router-dom'
+import { Navigate,useNavigate } from 'react-router-dom'
 
 export default function ProtectedRoute({ children }) {
     const { firebaseUser , loading } = useContext(AuthContext)
@@ -25,3 +25,4 @@ export default function ProtectedRoute({ children }) {
     )
 
 }
+
