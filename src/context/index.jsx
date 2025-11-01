@@ -16,9 +16,10 @@ function AuthProvider({ children }) {
                 setLoading(false)
                 // ...
             } else {
-                // User is signed out
-                // ...
+               setFirebaseUser(null)
+                
             }
+            setLoadin(true)
         });
 
         return unsubscribe
@@ -31,5 +32,6 @@ function AuthProvider({ children }) {
         </AuthContext.Provider>
     )   
 }
+
 
 export { AuthProvider }
