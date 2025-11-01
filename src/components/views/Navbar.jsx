@@ -2,8 +2,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../../config/config";
-import { AuthContext, AuthProvider } from "../../../context";
 import { toast } from "react-toastify";
+import { AuthContext,AuthProvider} from "../../context";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,9 +18,12 @@ export default function Navbar() {
   };
 
   const handleLogout = () => {
-    signOut(auth)
+    if(email){signOut(auth)
     navigate('/login')
-    toast.success('Loged Out')
+    toast.success('Loged Out')}
+    else{
+      navigate('/login')
+    }
 
   };
 
@@ -29,7 +32,7 @@ export default function Navbar() {
       <h1 className="text-xl font-bold">ReactApp</h1>
 
       <div className="space-x-4 flex items-center">
-        <NavLink to="/dashboard" className="hover:underline">
+        <NavLink to="/" className="hover:underline">
           Dashboard
         </NavLink>
 
