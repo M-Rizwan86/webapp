@@ -1,5 +1,4 @@
 import { Home, Settings, LogOut } from "lucide-react";
-import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context";
 import { signOut } from "firebase/auth";
